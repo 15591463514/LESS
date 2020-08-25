@@ -1,0 +1,51 @@
+@width:100px;
+@height:200px;
+@color:#bfc;
+@box:div;
+@url:"../img";
+@a:100px;
+@b:@a;
+
+
+
+
+.box1{
+    width: @width;
+    height: @height;
+    background: red;
+}
+
+.box2{
+    width: @width;
+    height: @b;
+    background: @color;
+}
+
+//注意：变量为选择器时的使用方法 
+@{box}{
+    border-radius:10px;
+}
+
+
+@var:0;
+.wrap{
+    @var:1;
+    box{
+        @var:2;
+        three:@var;
+        @var:3;
+    }
+    one:@var;
+}
+
+/*编译结果：
+.wrap {
+    one: 1;
+  }
+  .wrap box {
+    three: 3;
+  }
+*/
+
+// 1、先找子元素，如果子元素中的有两个或者多个相同的变量，默认拿最后一个
+// 2、如果子元素中没有，就向上一级找，默认拿最后一个

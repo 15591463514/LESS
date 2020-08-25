@@ -1,0 +1,28 @@
+.box1 {
+  width: 100px;
+  height: 200px;
+  background: red;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  background: #bfc;
+}
+div {
+  border-radius: 10px;
+}
+.wrap {
+  one: 1;
+}
+.wrap box {
+  three: 3;
+}
+/*编译结果：
+.wrap {
+    one: 1;
+  }
+  .wrap box {
+    three: 3;
+  }
+*/
+/*# sourceMappingURL=./002_变量.css.map */
